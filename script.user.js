@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.udemy.com/course/*/learn/*
 // @grant       GM_setClipboard
-// @version     10.1
+// @version     10.2
 // @author      Renato Araujo da Silva (https://github.com/coldrenatinho)
 // @description Expande automaticamente todas as seções do curso da Udemy e copia a grade curricular em formato Markdown para o Notion, com formatação limpa.
 // @icon        https://www.google.com/s2/favicons?sz=64&domain=udemy.com
