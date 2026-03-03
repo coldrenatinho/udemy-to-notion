@@ -1,7 +1,6 @@
 # 🚀 Udemy to Notion Master
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-10.0-blueviolet.svg)](#)
 [![Greasy Fork](https://img.shields.io/greasyfork/v/568180?color=red)](https://greasyfork.org/pt-BR/scripts/568180)
 
 Uma automação profissional para estudantes que utilizam o **Notion** para organizar seus estudos na Udemy. Este script extrai toda a grade curricular de um curso, incluindo seções, títulos das aulas e duração, formatando tudo em uma tabela Markdown pronta para ser convertida em um banco de dados.
