@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-10.0-blueviolet.svg)](#)
+[![Greasy Fork](https://img.shields.io/greasyfork/v/568180?color=red)](https://greasyfork.org/pt-BR/scripts/568180)
 
 Uma automação profissional para estudantes que utilizam o **Notion** para organizar seus estudos na Udemy. Este script extrai toda a grade curricular de um curso, incluindo seções, títulos das aulas e duração, formatando tudo em uma tabela Markdown pronta para ser convertida em um banco de dados.
 
@@ -35,8 +36,6 @@ O script adiciona um botão inteligente no canto inferior esquerdo da tela da Ud
 O código fonte completo está disponível em [udemy-to-notion.user.js](./udemy-to-notion.user.js).
 
 ---
-
-> Status do Deploy: [![Greasy Fork](https://img.shields.io/greasyfork/v/568180?color=red)](https://greasyfork.org/pt-BR/scripts/568180)
 
 ## 👤 Autor
 
