@@ -36,9 +36,11 @@ O código fonte completo está disponível em [udemy-to-notion.user.js](./udemy-
 
 ---
 
+> Status do Deploy: [![Greasy Fork](https://img.shields.io/greasyfork/v/568180?color=red)](https://greasyfork.org/pt-BR/scripts/568180)
+
 ## 👤 Autor
 
-Desenvolvido por **Renatinho** - GitHub: [@coldrenatinho](https://github.com/coldrenatinho)
+Desenvolvido por **Renato Araujo da Silva** - GitHub: [@coldrenatinho](https://github.com/coldrenatinho)
 
 ---
 *Nota: Este script não possui vínculo oficial com a Udemy. Use para fins de organização pessoal de estudos.*
