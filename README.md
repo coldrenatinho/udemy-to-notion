@@ -20,8 +20,7 @@ O script adiciona um botão inteligente no canto inferior esquerdo da tela da Ud
 1. Instale uma extensão de UserScripts no seu navegador:
    - [Violentmonkey](https://violentmonkey.github.io/) (Recomendado)
    - [Tampermonkey](https://www.tampermonkey.net/)
-2. Clique no botão de criar "Novo Script".
-3. Copie o código do arquivo `udemy-to-notion.user.js` deste repositório e cole no editor da extensão.
+3. - [Clique aqui para instalar o script](extension://eeagobfjdenkkddmbclomhiblgggliao/confirm/index.html#VMoifq1gv84x8)
 4. Salve e recarregue a página do curso na Udemy.
 
 ## 📋 Como usar no Notion
