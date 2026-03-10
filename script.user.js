@@ -3,19 +3,18 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.udemy.com/course/*/learn/*
 // @grant       GM_setClipboard
-// @version     10.2
+// @version     11.0
 // @author      Renato Araujo da Silva (https://github.com/coldrenatinho)
 // @description Expande automaticamente todas as seções do curso da Udemy e copia a grade curricular em formato Markdown para o Notion, com formatação limpa.
 // @icon        https://www.google.com/s2/favicons?sz=64&domain=udemy.com
 // @license     MIT
 // ==/UserScript==
-
 (function() {
     'use strict';
 
     const btn = document.createElement('button');
     btn.innerHTML = '🚀 COPIAR PARA NOTION';
-    // Estilo atualizado: Posicionado no canto inferior esquerdo
+
     btn.style = `
         position: fixed;
         bottom: 20px;
@@ -33,10 +32,8 @@
         transition: transform 0.2s ease;
     `;
 
-    // Efeito de hover simples
     btn.onmouseover = () => btn.style.transform = 'scale(1.05)';
     btn.onmouseout = () => btn.style.transform = 'scale(1)';
-
     document.body.appendChild(btn);
 
     btn.onclick = async () => {
@@ -44,34 +41,32 @@
         btn.innerHTML = '⏳ Abrindo seções...';
         btn.style.background = '#2d2e2f';
 
-        // 1. Localiza e clica em todos os botões de seção que estão fechados
+        // 1. Abre todas as seções fechadas
         const togglers = document.querySelectorAll('.js-panel-toggler[aria-expanded="false"]');
         togglers.forEach(t => t.click());
 
-        // 2. Aguarda a renderização (2 segundos para garantir segurança em cursos grandes)
+        // 2. Aguarda renderização
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        // 3. Extração sem a coluna ID
+        // 3. Monta a tabela Markdown
         const sections = document.querySelectorAll('[data-purpose^="section-panel-"]');
-        let markdown = "| Seção / Aula | Duração | Status |\n| :--- | :--- | :--- |\n";
+        let markdown = "| Seção / Aula | Status | Links & Mídia | Anotações |\n| :--- | :---: | :--- | :--- |\n";
         let hasContent = false;
 
         sections.forEach((section) => {
             const sectionTitle = section.querySelector('.ud-accordion-panel-title span')?.innerText.trim();
             if (sectionTitle) {
-                markdown += `| **${sectionTitle}** | - | - |\n`;
+                // Linha de seção: célula de status vazia, sem links/anotações
+                markdown += `| **${sectionTitle.replace(/\|/g, "-")}** | - | - | - |\n`;
             }
 
             const lectures = section.querySelectorAll('li');
             lectures.forEach((lecture) => {
                 const title = lecture.querySelector('[data-purpose="item-title"]')?.innerText.trim();
-                const duration = lecture.querySelector('span[class*="duration"], .curriculum-item-link--metadata--XK804 span')?.innerText.trim();
-
                 if (title) {
                     hasContent = true;
-                    // Remove o caractere "|" para não quebrar a tabela Markdown
                     const cleanTitle = title.replace(/\|/g, "-");
-                    markdown += `| ${cleanTitle} | ${duration || "---"} | ⚪ Pendente |\n`;
+                    markdown += `| ${cleanTitle} | ⬜ Pendente | | |\n`;
                 }
             });
         });
